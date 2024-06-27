@@ -8,6 +8,7 @@ import {
   TouchableOpacity, //Botão
   StyleSheet, //Style de Página
   SafeAreaView, //Ajuste da tela do APP
+  ImageBackground,
 } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -17,6 +18,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 
 //Importação da biblioteca de ícones
 import { Ionicons, Entypo } from "@expo/vector-icons";
+
 
 //importação das telas
 import Aula from "./scr/tabs/Aula";
@@ -137,7 +139,11 @@ function MyTabs() {
 function LoginScreen({ navigation }) {
   const [isFocused, setIsFocused] = React.useState(false);
   return (
-    <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#7D8597" }}>
+    <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "white" }}>
+      <View style={styles.container}>
+    <ImageBackground source={"./assets/imgFundoLogin.png"} resizeMode="cover" style={styles.imageFundoLogin}>
+    </ImageBackground>
+  </View>
       <Image style={styles.img} source={require("./assets/logo.png")} />
       <Text style={styles.text}>LOGIN</Text>
       <TextInput
@@ -217,14 +223,14 @@ export default function App() {
 // estilização dos itens
 const styles = StyleSheet.create({
   resetSenha: {
-    color: "#48c9b0",
+    color: "#001845",
     margin: 10,
   },
   text: {
     fontSize: 40,
     margin: 30,
     fontWeight: "bold",
-    color: "#34495e",
+    color: "#001845",
     letterSpacing: 2,
   },
   img: {
@@ -233,30 +239,31 @@ const styles = StyleSheet.create({
   },
   input: {
     borderBottomWidth: 3,
-    borderBottomColor: "#48c9b0",
+    borderBottomColor: "#023E7D",
     width: "90%",
     marginTop: 10,
     marginBottom: 20,
     padding: 10,
+    color: "#001845",
   },
   btn: {
     backgroundColor: "#023E7D",
     padding: 10,
-    borderRadius: 5,
-    width: 150,
+    borderRadius: 10,
+    width: 270,
   },
   btnText: {
     color: "#fff",
     backgroundColor: "#023E7D",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
   },
   focusedInput: {
-    borderBottomColor: "#f1c40f",
+    borderBottomColor: "#33415C",
   },
   resetContainer: {
-    backgroundColor: "#7D8597",
+    backgroundColor: "white",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -268,15 +275,15 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     fontSize: 25,
-    color: "#F8F8FF",
+    color: "#001845",
     marginTop: 15,
   },
   inputField: {
-    color: "#F8F8FF",
+    color: "#001845",
     width: "90%",
     height: 40,
     borderBottomWidth: 2,
-    borderBottomColor: "#48C9B0",
+    borderBottomColor: "#023E7D",
     marginTop: 10,
   },
   buttonContainer: {
